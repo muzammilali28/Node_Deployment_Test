@@ -23,6 +23,12 @@ console.log("My Machine Address is : ", address);
 const API = "http://" + address + ":" + PORT;
 console.log("The API is : ", API);
 
+app.use("/fyp", userRoutes);
+
+app.get("/", (req, res) => {
+  res.send("Hello to the Web-Page");
+});
+
 // fs.writeFile("../frontend/api-configurtaion.json",`{"API_URL" : "${API}"}`,(error)=>{
 
 //   if(error){
@@ -31,8 +37,6 @@ console.log("The API is : ", API);
 
 //   console.log("Saved")
 // })
-
-app.use("/fyp", userRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server Listening on PORT : ${PORT}`);
